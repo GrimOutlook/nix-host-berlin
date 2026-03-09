@@ -42,8 +42,15 @@
         };
       };
 
-      home = {
-        home.stateVersion = "25.11";
-      };
+      home =
+        { pkgs, ... }:
+        {
+          home = {
+            packages = with pkgs; [
+              prusa-slicer
+            ];
+            stateVersion = "25.11";
+          };
+        };
     };
 }
