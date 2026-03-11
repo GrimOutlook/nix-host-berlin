@@ -21,11 +21,10 @@
 
       modules = [
         "bluetooth"
-        "desktop"
         "dev"
         "laptop"
         "networking"
-        "physical"
+        "virtualization"
       ];
 
       host-info = rec {
