@@ -39,7 +39,9 @@
       };
 
       nixos = {
-        modules = [ ./hardware.nix ];
+        modules = [
+          ./hardware.nix
+        ];
         environment.systemPackages = with pkgs; [
           chromium
           qmk
@@ -55,6 +57,9 @@
       };
 
       home = {
+        modules = [
+          ./displays.nix
+        ];
         home = {
           packages = with pkgs; [
             prusa-slicer
