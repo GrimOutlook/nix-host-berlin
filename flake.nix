@@ -57,7 +57,7 @@
       };
 
       home = {
-        modules = [
+        imports = [
           ./displays.nix
         ];
         home = {

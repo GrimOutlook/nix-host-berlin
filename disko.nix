@@ -11,6 +11,7 @@
             name = "ESP";
             size = "500M";
             type = "EF00";
+            label = "NIXBOOT";
             content = {
               type = "filesystem";
               format = "vfat";
@@ -20,6 +21,7 @@
           };
           root = {
             size = "100%";
+            label = "NIXROOT";
             content = {
               type = "btrfs";
               extraArgs = [ "-f" ]; # Override existing partition
@@ -29,10 +31,17 @@
                 # Subvolume name is different from mountpoint
                 "/rootfs" = {
                   mountpoint = "/";
+                  mountOptions = [
+                    "compress=zstd"
+                    "relatime"
+                  ];
                 };
                 # Subvolume name is the same as the mountpoint
                 "/home" = {
-                  mountOptions = [ "compress=zstd" ];
+                  mountOptions = [
+                    "compress=zstd"
+                    "relatime"
+                  ];
                   mountpoint = "/home";
                 };
                 # Parent is not mounted so the mountpoint must be set
@@ -49,13 +58,6 @@
                   swap = {
                     swapfile.size = "96G";
                   };
-                };
-              };
-
-              mountpoint = "/partition-root";
-              swap = {
-                swapfile = {
-                  size = "96G";
                 };
               };
             };
