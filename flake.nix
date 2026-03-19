@@ -31,6 +31,8 @@
         "dev"
         "networking"
         "virtualization"
+        "lang_rust"
+        "lang_toml"
       ];
 
       host-info = rec {
