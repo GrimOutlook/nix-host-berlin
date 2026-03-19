@@ -1,5 +1,5 @@
 {
-  description = "NixOS configuration for paris";
+  description = "NixOS configuration for berlin";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
@@ -27,14 +27,14 @@
 
       modules = [
         "bluetooth"
+        "desktop"
         "dev"
-        "laptop"
         "networking"
         "virtualization"
       ];
 
       host-info = rec {
-        name = "paris";
+        name = "berlin";
         flake = "github:GrimOutlook/nix-host-${name}";
       };
 
