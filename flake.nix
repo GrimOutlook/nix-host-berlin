@@ -43,6 +43,7 @@
       nixos = {
         modules = [
           ./hardware.nix
+          ./gaming.nix
         ];
         environment.systemPackages = with pkgs; [
           chromium
