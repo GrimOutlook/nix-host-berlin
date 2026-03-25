@@ -46,6 +46,7 @@
           ./modules/gaming.nix
           ./modules/qmk.nix
           ./modules/gpu-screen-recorder.nix
+          ./modules/greetd.nix
         ];
         environment.systemPackages = with pkgs; [
           chromium
