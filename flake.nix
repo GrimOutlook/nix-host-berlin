@@ -42,16 +42,13 @@
 
       nixos = {
         modules = [
-          ./hardware.nix
-          ./gaming.nix
+          ./modules/hardware.nix
+          ./modules/gaming.nix
+          ./modules/qmk.nix
+          ./modules/gpu-screen-recorder.nix
         ];
         environment.systemPackages = with pkgs; [
           chromium
-          qmk
-          qmk_hid
-        ];
-        services.udev.packages = with pkgs; [
-          qmk-udev-rules
         ];
         system = {
           autoUpgrade.enable = true;
@@ -61,13 +58,10 @@
 
       home = {
         imports = [
-          ./displays.nix
+          ./modules/displays.nix
+          ./modules/3d-printing.nix
         ];
         home = {
-          packages = with pkgs; [
-            prusa-slicer
-            orca-slicer
-          ];
           stateVersion = "25.11";
         };
       };

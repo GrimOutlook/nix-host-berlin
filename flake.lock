@@ -435,11 +435,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1774358257,
-        "narHash": "sha256-W7dw9m7NrFUVQaYAymvDzLGYk92FPx2Qc+rRQz2qDSY=",
+        "lastModified": 1774401678,
+        "narHash": "sha256-/eIBfZycmOXDrBGJl0lkCgWTVXP1sZQnG47JX1hMzPc=",
         "owner": "GrimOutlook",
         "repo": "nix-config",
-        "rev": "1d5f99da0e2fda842a5b943d7ea1c54137a6bd88",
+        "rev": "071a5c10fdd84567a9a9b6562eefb6242050aca9",
         "type": "github"
       },
       "original": {
