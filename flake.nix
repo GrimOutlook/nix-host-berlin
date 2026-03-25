@@ -50,6 +50,7 @@
         ];
         environment.systemPackages = with pkgs; [
           chromium
+          obsidian
         ];
         system = {
           autoUpgrade.enable = true;
