@@ -52,6 +52,8 @@
         environment.systemPackages = with pkgs; [
           chromium
           obsidian
+          efibootmgr
+          (writeShellScriptBin "boot-to-windows" "systemctl reboot --boot-loader-entry=auto-windows")
         ];
         system = {
           autoUpgrade.enable = true;
@@ -61,8 +63,9 @@
 
       home = {
         imports = [
-          ./modules/displays.nix
           ./modules/3d-printing.nix
+          ./modules/displays.nix
+          ./modules/hyprpanel.nix
         ];
         home = {
           stateVersion = "25.11";
