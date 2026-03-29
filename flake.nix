@@ -27,9 +27,10 @@
 
       modules = [
         "bluetooth"
+        "build-arm"
         "desktop"
         "dev"
-        "networking"
+        "network-diag"
         "virtualization"
         "lang_rust"
         "lang_toml"
