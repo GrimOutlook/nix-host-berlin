@@ -2,6 +2,8 @@
   description = "NixOS configuration for berlin";
 
   inputs = {
+    homelab.url = "git+ssh://git@github.com/GrimOutlook/nix-homelab";
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
     nix-config = {
@@ -63,10 +65,14 @@
 
       home = {
         imports = [
+          inputs.homelab.homeManagerModules.default
+
           ./modules/3d-printing.nix
           ./modules/displays.nix
           ./modules/hyprpanel.nix
         ];
+
+        homelab.ssh_config.enable = true;
         home = {
           stateVersion = "25.11";
         };
