@@ -21,6 +21,7 @@
     chromium
     obsidian
     efibootmgr
+    kdePackages.kdenlive
   ];
 
   # USBGuard allow-list for the peripherals attached to berlin. The default
