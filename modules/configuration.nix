@@ -17,6 +17,8 @@
     virtualization.enable = true;
   };
 
+  host.nix.realtimePackages = [ "chromium" ];
+
   environment.systemPackages = with pkgs; [
     chromium
     obsidian
